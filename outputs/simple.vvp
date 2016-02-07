@@ -1,0 +1,49 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x8ccde0 .scope module, "simple_tb" "simple_tb" 2 1;
+ .timescale 0 0;
+v0x8dd500_0 .var "A", 3 0;
+v0x8dd5a0_0 .net "B", 3 0, L_0x8dda70; 1 drivers
+S_0x8cced0 .scope module, "s" "simple" 2 19, 3 1, S_0x8ccde0;
+ .timescale 0 0;
+v0x8a9940_0 .net "A", 3 0, v0x8dd500_0; 1 drivers
+v0x8dd190_0 .alias "B", 3 0, v0x8dd5a0_0;
+v0x8dd230_0 .net *"_s1", 0 0, L_0x8dd650; 1 drivers
+v0x8dd2d0_0 .net *"_s3", 0 0, L_0x8dd770; 1 drivers
+v0x8dd380_0 .net *"_s5", 0 0, L_0x8dd810; 1 drivers
+v0x8dd420_0 .net *"_s7", 0 0, L_0x8dd970; 1 drivers
+L_0x8dd650 .part v0x8dd500_0, 0, 1;
+L_0x8dd770 .part v0x8dd500_0, 2, 1;
+L_0x8dd810 .part v0x8dd500_0, 1, 1;
+L_0x8dd970 .part v0x8dd500_0, 3, 1;
+L_0x8dda70 .concat [ 1 1 1 1], L_0x8dd970, L_0x8dd810, L_0x8dd770, L_0x8dd650;
+    .scope S_0x8ccde0;
+T_0 ;
+    %movi 8, 10, 4;
+    %set/v v0x8dd500_0, 8, 4;
+    %end;
+    .thread T_0;
+    .scope S_0x8ccde0;
+T_1 ;
+    %vpi_call 2 9 "$dumpfile", "simple.vcd";
+    %vpi_call 2 10 "$dumpvars", 1'sb0, S_0x8cced0;
+    %vpi_call 2 11 "$monitor", "A is %b, B is %b.", v0x8dd500_0, v0x8dd5a0_0;
+    %delay 50, 0;
+    %movi 8, 12, 4;
+    %set/v v0x8dd500_0, 8, 4;
+    %delay 100, 0;
+    %set/v v0x8dd500_0, 0, 4;
+    %delay 100, 0;
+    %vpi_call 2 16 "$finish";
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "simple_tb.v";
+    "simple.v";
