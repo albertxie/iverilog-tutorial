@@ -1,3 +1,4 @@
+// very standard Verilog module
 module simple(A, B);
 
    input  [3:0] A;
