@@ -12,7 +12,7 @@ sudo apt-get install gtkwave
 ```bash
 iverilog -o simple.vvp simple.v simple_tb.v
 ```
-In this specific example, we are testing a Verilog module called `simple.v`. The test cases are contained in the file `simpe_tb.v`, it can be named arbitrarily; although it is called `moduldename_tb.v` by convention. We specify our output file to be `simple.vvp`
+In this specific example, we are testing a Verilog module called `simple.v`. The test cases are contained in the file `simple_tb.v`, it can be named arbitrarily; although it is called `moduldename_tb.v` by convention. We specify our output file to be `simple.vvp`
 
 ### Running the Simulation
 ```bash
