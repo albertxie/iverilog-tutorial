@@ -1,7 +1,7 @@
 # Icarus Verilog & GTKWave
 This tutorial is intended for those taking CSC258 who want to compile and test Verilog code on their personal machines without having to use Quartus. The provided commands are intended for Linux and should serve only as reference material. 
 
-### Instalation 
+### Installation 
 The two pieces of software we need are [Icarus Verilog](http://iverilog.icarus.com/) and [GTKwave](http://gtkwave.sourceforge.net/) both of which are open source and publicy available. 
 ```bash
 sudo apt-get install iverilog
