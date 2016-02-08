@@ -35,5 +35,16 @@ Once GTKWave has launched
   3. Bottom-left of the screen should display a chart with Type and Signal
   4. Drag whichever one you'd like to analyse over to the Signals tab
 
+###Vim Mapping
+```vim
+function! SetupVerilogEnvironment()
+	map <F5> :! iverilog -o %:r.vvp %:r.v %:r_tb.v && vvp %:r.vvp && gtkwave %:r.vcd <ENTER>
+endfunction
+
+if has("autocmd")
+	autocmd Filetype verilog call SetupVerilogEnvironment()
+endif
+```
+
 ***
-Remark: This is by no means a comprehensive guide, feel free to add/correct anything in this tutorial.
+*This is by no means a comprehensive guide, feel free to add/correct anything in this tutorial.
