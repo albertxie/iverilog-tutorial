@@ -32,8 +32,9 @@ gtkwave simple.vcd
 Once GTKWave has launched
   1. locate the `SST` tab top-left of the screen and expand all
   2. Locate the desired test case and click
-  3. Bottom-left of the screen should display a chart with Type and Signal
-  4. Drag whichever one you'd like to analyse over to the Signals tab
+  3. Bottom-left of the screen should display a chart with Type and Signal. Drag whichever one you'd like to analyse over to the Signals tab
+
+![gtkwave annotated screenshot](gtkwave-annotated.png)
 
 ### Vim Mapping
 ```vim
