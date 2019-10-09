@@ -2,7 +2,7 @@
 This tutorial is intended for those taking CSC258 who want to compile and test Verilog code on their personal machines without having to use Quartus. The provided commands are intended for Linux and should serve only as reference material. 
 
 ### Installation 
-The two pieces of software we need are [Icarus Verilog](http://iverilog.icarus.com/) and [GTKwave](http://gtkwave.sourceforge.net/) both of which are open source and publicy available. 
+The two pieces of software we need are [Icarus Verilog](http://iverilog.icarus.com/) and [GTKwave](http://gtkwave.sourceforge.net/) both of which are open source and publicly available. 
 ```bash
 sudo apt-get install iverilog
 sudo apt-get install gtkwave
@@ -12,7 +12,7 @@ sudo apt-get install gtkwave
 ```bash
 iverilog -o simple.vvp simple.v simple_tb.v
 ```
-In this specific example, we are testing a Verilog module called `simple.v`. The test cases are contained in the file `simple_tb.v`, it can be named arbitrarily; although it is called `moduldename_tb.v` by convention. We specify our output file to be `simple.vvp`
+In this specific example, we are testing a Verilog module called `simple.v`. The test cases are contained in the file `simple_tb.v`, it can be named arbitrarily; although it is called `modulename_tb.v` by convention. We specify our output file to be `simple.vvp`
 
 ### Running the Simulation
 ```bash
@@ -35,7 +35,7 @@ Once GTKWave has launched
   3. Bottom-left of the screen should display a chart with Type and Signal
   4. Drag whichever one you'd like to analyse over to the Signals tab
 
-###Vim Mapping
+### Vim Mapping
 ```vim
 function! SetupVerilogEnvironment()
 	map <F5> :! iverilog -o %:r.vvp %:r.v %:r_tb.v && vvp %:r.vvp && gtkwave %:r.vcd <ENTER>
