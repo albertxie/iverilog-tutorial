@@ -1,5 +1,4 @@
 # Icarus Verilog & GTKWave
-This tutorial is intended for those taking CSC258 who want to compile and test Verilog code on their personal machines without having to use Quartus. The provided commands are intended for Linux and should serve only as reference material. 
 
 ### Installation 
 The two pieces of software we need are [Icarus Verilog](http://iverilog.icarus.com/) and [GTKwave](http://gtkwave.sourceforge.net/) both of which are open source and publicly available. 
@@ -36,16 +35,3 @@ Once GTKWave has launched
 
 ![gtkwave annotated screenshot](gtkwave-annotated.png)
 
-### Vim Mapping
-```vim
-function! SetupVerilogEnvironment()
-	map <F5> :! iverilog -o %:r.vvp %:r.v %:r_tb.v && vvp %:r.vvp && gtkwave %:r.vcd <ENTER>
-endfunction
-
-if has("autocmd")
-	autocmd Filetype verilog call SetupVerilogEnvironment()
-endif
-```
-
-***
-*This is by no means a comprehensive guide, feel free to add/correct anything in this tutorial.
